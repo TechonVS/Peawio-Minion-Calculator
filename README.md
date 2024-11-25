@@ -2,7 +2,7 @@
 
 This is a web-based tool that helps players calculate minion production in CraftersMC SkyBlock. Users can select minion types, tiers, fuels, and other upgrades to get detailed production estimates.
 
-[Try it here!](https://peawgithub.github.io/CraftersMC-Minion-Calculator/Calculator.html)
+[Try it here!](https://peawies.github.io/CraftersMC-Minion-Calculator/Calculator.html)
 
 ## Features
 
@@ -11,7 +11,7 @@ This is a web-based tool that helps players calculate minion production in Craft
 
 ## Credits
 
-- Developed by [PeawGitHub](https://github.com/PeawGitHub)
+- Developed by [Peaw](https://github.com/Peawies)
 
 ## License
 
