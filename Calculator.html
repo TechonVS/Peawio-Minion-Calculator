@@ -762,7 +762,11 @@
             }
 
             if (diamondSpreading === "yes") {
-                diamondBonus = Math.floor(diamondBonus / 10);
+                diamondBonus = (diamondBonus / 10).toFixed(2);
+            }
+
+            if (superCompactor === "yes") {
+                diamondBonus = (diamondBonus / 160).toFixed(2);
             }
 
             let resultHTML = `Tier ${tier} ${minion}<br>`;
@@ -817,7 +821,14 @@
             }
 
             if (diamondSpreading === "yes") {
-                resultHTML += `<strong>${diamondBonus}x Diamond</strong>`;
+                resultHTML += `<strong>${diamondBonus}x</strong>`;
+            if (superCompactor === "yes") {
+                resultHTML += ` Enchanted`;
+            }
+            else {
+                resultHTML += ``;
+            }
+                resultHTML += ` Diamond</strong>`;
             if (minion === "Diamond Minion" || minion === "Revenant Minion") {
                 resultHTML += ` (Diamond Spreading)`;
             }
