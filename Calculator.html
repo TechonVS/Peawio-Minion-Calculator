@@ -751,7 +751,8 @@
                 for (let item in totalProduction) {
                     const baseAmount = totalProduction[item];
                     const enchantedName = enchantedNameMapping[item] || `Enchanted ${item}`;
-                    const enchantedAmount = baseAmount / 160;
+                    const divisionFactor = item === "String" ? 192 : 160;
+                    const enchantedAmount = baseAmount / divisionFactor;
 
                     if (enchantedAmount > 0) {
                         enchantedItems[enchantedName] = parseFloat(enchantedAmount.toFixed(2));
