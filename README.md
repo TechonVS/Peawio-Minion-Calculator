@@ -15,4 +15,4 @@ This is a web-based tool that helps players calculate minion production in Craft
 
 ## License
 
-This project is licensed under the GPL-3.0
+This project is licensed under the BY-NC-ND 4.0. Last updated on December 21, 2024.
