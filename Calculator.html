@@ -751,7 +751,12 @@
                 for (let item in totalProduction) {
                     const baseAmount = totalProduction[item];
                     const enchantedName = enchantedNameMapping[item] || `Enchanted ${item}`;
-                    const divisionFactor = item === "String" ? 192 : 160;
+                    let divisionFactor = 160;
+                    if (item === "String") {
+                        divisionFactor = 192;
+                    } else if (item === "Leather") {
+                        divisionFactor = 576;
+                    }
                     const enchantedAmount = baseAmount / divisionFactor;
 
                     if (enchantedAmount > 0) {
