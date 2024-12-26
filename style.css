@@ -64,12 +64,13 @@ button {
     justify-content: center;
     align-items: center;
 }
-
-button.selected {
+.buttonselect.selected {
     background-color: #8c9c4c;
     color: black;
     border: 3px solid white;
+
 }
+
 
 button:hover {
     opacity: 0.8;
@@ -148,17 +149,45 @@ button:active {
 font-family: "Montserrat", Arial, sans-serif;
     }
 
-    /* Hover effect for the button */
+
     .calcuateButton:hover {
-        background-color: #45a049; /* Darker green when hovering */
+        background-color: #45a049; 
     }
 
-    /* Focus effect for the button */
+
     .calcuateButton:focus {
-        outline: none; /* Removes default focus outline */
-        box-shadow: 0 0 5px 2px rgba(0, 123, 255, 0.5); /* Adds a blue shadow on focus */
-    }
+        outline: none; 
+        box-shadow: 0 0 5px 2px rgba(0, 123, 255, 0.5);    }
 .result {
 font-size: 30px;
 color: white;
+}
+
+
+.minion-upgrades-row {
+    display: flex;
+    gap: 20px; /* Adjust the spacing between the buttons as needed */
+    justify-content: center; /* Centers the row */
+    margin: 10px 0; /* Optional: Adds spacing above and below the row */
+}
+
+.toggle-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    border: 1px solid #29282f;
+    background-color: #29282f;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+.toggle-button[data-value="no"] {
+    opacity: 0.5;
+}
+
+.toggle-button[data-value="yes"].selected {
+    background-color: #8c9c4c;
+    border: 3px solid white;
+}
+
 }
