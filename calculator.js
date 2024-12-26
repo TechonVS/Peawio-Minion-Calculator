@@ -1,4 +1,25 @@
-        window.onload = () => showCategory('Farming');  
+// Function to toggle a button's state
+function toggleButton(buttonId, selectionKey) {
+    const button = document.getElementById(buttonId);
+    const currentValue = button.getAttribute("data-value");
+    const newValue = currentValue === "yes" ? "no" : "yes"; // Toggle between 'yes' and 'no'
+
+    button.setAttribute("data-value", newValue);
+    button.classList.toggle("selected", newValue === "yes"); // Highlight if enabled
+    selections[selectionKey] = newValue; // Update the selections object
+}
+
+// Add event listeners for both buttons
+document.getElementById("diamondSpreadingToggle").addEventListener("click", function () {
+    toggleButton("diamondSpreadingToggle", "diamondSpreading");
+});
+
+document.getElementById("superCompactorToggle").addEventListener("click", function () {
+    toggleButton("superCompactorToggle", "superCompactor");
+});
+
+ 
+       window.onload = () => showCategory('Farming');  
 function showCategory(category) {
             const tabs = document.querySelectorAll('.minion-buttons');
             tabs.forEach(tab => tab.classList.remove('active'));
