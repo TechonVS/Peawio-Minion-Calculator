@@ -598,12 +598,20 @@ const minionProduction = {
             superCompactor: null,
         };
 
-        function handleButtonClick(group, value) {
-            const buttons = document.querySelectorAll(`#${group} button`);
-            buttons.forEach(button => button.classList.remove('selected'));
-            document.querySelector(`#${group} button[data-value='${value}']`).classList.add('selected');
-            selections[group.replace('Buttons', '')] = value;
-        }
+function handleButtonClick(group, value) {
+    const buttons = document.querySelectorAll(`#${group} button`);
+    const selectedButton = document.querySelector(`#${group} button.selected`);
+
+    if (selectedButton && selectedButton.getAttribute('data-value') === value) {
+        selectedButton.classList.remove('selected');
+        selections[group.replace('Buttons', '')] = null;
+    } else {
+        buttons.forEach(button => button.classList.remove('selected'));
+        document.querySelector(`#${group} button[data-value='${value}']`).classList.add('selected');
+        selections[group.replace('Buttons', '')] = value;
+    }
+}
+
 
         document.querySelectorAll('.button-group').forEach(group => {
             group.addEventListener('click', event => {
@@ -613,131 +621,109 @@ const minionProduction = {
             });
         });
 
-        function calculateProduction() {
-            const { minion, tier, fuel, diamondSpreading, superCompactor } = selections;
+ function calculateProduction() {
+    const { minion, tier, diamondSpreading, superCompactor } = selections;
+    const fuel = selections.fuel || "None"; // Default to "None" if no fuel is selected
 
-            if (!minion || !tier || !fuel) {
-                document.getElementById("result").textContent = "Please select all fields.";
-                return;
-            }
+    // Validate inputs
+    if (!minion || !tier) {
+        document.getElementById("result").textContent = "Please select a minion and tier.";
+        return;
+    }
 
-            let production = minionProduction[minion] && minionProduction[minion][tier] ? minionProduction[minion][tier] : {};
-            if (!production) {
-                document.getElementById("result").textContent = "Invalid minion or tier.";
-                return;
-            }
+    // Get production data for the selected minion and tier
+    const production = minionProduction[minion] && minionProduction[minion][tier];
+    if (!production) {
+        document.getElementById("result").textContent = "Invalid minion or tier.";
+        return;
+    }
 
-            const fuelMultiplier = fuelMultipliers[fuel] || 1;
-            let totalProduction = {};
-            let diamondBonus = 0;
-            let enchantedItems = {};
+    // Apply the fuel multiplier (default is 1 for "None")
+    const fuelMultiplier = fuelMultipliers[fuel] || 1;
 
-            for (let item in production) {
-                totalProduction[item] = production[item] * fuelMultiplier;
-                if (diamondSpreading === "yes") {
-                    diamondBonus += totalProduction[item];
-                 
-                }
-            }
+    // Calculate total production
+    let totalProduction = {};
+    let diamondBonus = 0;
+    let enchantedItems = {};
 
-            if (superCompactor === "yes") {
-                const enchantedNameMapping = {
-                    "Wheat": "Enchanted Bread",
-                    "Sugar Cane": "Enchanted Sugar",
-                    "Green Dye": "Enchanted Cactus Green",
-                    "Blaze Rod": "Enchanted Blaze Powder",
-                };
-
-                let updatedProduction = {};
-
-                for (let item in totalProduction) {
-                    const baseAmount = totalProduction[item];
-                    const enchantedName = enchantedNameMapping[item] || `Enchanted ${item}`;
-                    const divisionFactor = item === "String" ? 192 : item === "Leather" ? 576 : 160;
-                    const enchantedAmount = baseAmount / divisionFactor;
-
-                    if (enchantedAmount > 0) {
-                        enchantedItems[enchantedName] = parseFloat(enchantedAmount.toFixed(2));
-                    }
-                }
-
-                totalProduction = updatedProduction; // Clear non-enchanted items
-            }
-
-            if (diamondSpreading === "yes") {
-                diamondBonus = (diamondBonus / 10).toFixed(2);
-            }
-
-            if (superCompactor === "yes") {
-                diamondBonus = (diamondBonus / 160).toFixed(2);
-            }
-
-            let resultHTML = `<strong>Tier ${tier} ${minion}<br></strong>`;
-
-            if (fuel !== "None") {
-                resultHTML += `<span style="color: green;">✔</span> Fuel: ${fuel}<br>`;
-            } else {
-                resultHTML += `<span style="color: red;">✘</span> Fuel<br>`;
-            }
-
-            if (superCompactor === "yes") {
-                resultHTML += `<span style="color: green;">✔</span> Super Compactor 3000<br>`;
-            } else {
-                resultHTML += `<span style="color: red;">✘</span> Super Compactor 3000<br>`;
-            }
-             if (minion === "Iron Minion" || minion === "Gold Minion" || minion === "Cactus Minion") {
-                resultHTML += `<span style="color: green;">✔</span> Auto Smelter<br>`;
-            }
-            else {
-                resultHTML += `<span style="color: red;">✘</span> Auto Smelter<br>`;
-            }
-
-            if (minion === "Duck Minion") {
-                resultHTML += `<span style="color: green;">✔</span> Enchanted Duck Egg<br>`;
-            }
-            else {
-                resultHTML += `<span style="color: red;">✘</span> Enchanted Duck Egg<br>`;
-            }
-
-            
-
-            if (diamondSpreading === "yes") {
-                resultHTML += `<span style="color: green;">✔</span> Diamond Spreading<br>`;
-              
-            } else {
-                resultHTML += `<span style="color: red;">✘</span> Diamond Spreading<br>`;
-            }
-
-            resultHTML += `<br><strong>Production for 24 hours:</strong><br>`;
-
-            if (Object.keys(enchantedItems).length > 0) {
-                for (let item in enchantedItems) {
-                    resultHTML += `${enchantedItems[item]}x ${item}<br>`;
-                }
-            } else {
-                for (let item in totalProduction) {
-                    let value = totalProduction[item];
-                    let displayValue = value % 1 === 0 ? Math.floor(value) : value.toFixed(2);
-                    resultHTML += `${displayValue}x ${item}<br>`;
-                }
-            }
-
-                 if (diamondSpreading === "yes") {
-                resultHTML += `${diamondBonus}x`;
-            if (superCompactor === "yes") {
-                resultHTML += ` Enchanted`;
-            }
-            else {
-                resultHTML += ``;
-            }
-                resultHTML += ` Diamond</strong>`;
-            if (minion === "Diamond Minion" || minion === "Revenant Minion") {
-                resultHTML += ` (Diamond Spreading)`;
-            }
-            else {
-                resultHTML += ``;
-            }
-            }
-
-            document.getElementById("result").innerHTML = resultHTML;
+    for (let item in production) {
+        totalProduction[item] = production[item] * fuelMultiplier;
+        if (diamondSpreading === "yes") {
+            diamondBonus += totalProduction[item];
         }
+    }
+
+    // Handle Super Compactor logic
+    if (superCompactor === "yes") {
+        const enchantedNameMapping = {
+            "Wheat": "Enchanted Bread",
+            "Sugar Cane": "Enchanted Sugar",
+            "Green Dye": "Enchanted Cactus Green",
+            "Blaze Rod": "Enchanted Blaze Powder",
+        };
+
+        for (let item in totalProduction) {
+            const baseAmount = totalProduction[item];
+            const enchantedName = enchantedNameMapping[item] || `Enchanted ${item}`;
+            const divisionFactor = item === "String" ? 192 : item === "Leather" ? 576 : 160;
+            const enchantedAmount = baseAmount / divisionFactor;
+
+            if (enchantedAmount > 0) {
+                enchantedItems[enchantedName] = parseFloat(enchantedAmount.toFixed(2));
+            }
+        }
+    }
+
+    // Handle Diamond Spreading logic
+    if (diamondSpreading === "yes") {
+        diamondBonus = (diamondBonus / 10).toFixed(2);
+    }
+
+    // Build the result HTML
+    let resultHTML = `<strong>Tier ${tier} ${minion}<br></strong>`;
+
+    // Display fuel
+    if (fuel !== "None") {
+        resultHTML += `<span style="color: green;">✔</span> Fuel: ${fuel}<br>`;
+    } else {
+        resultHTML += `<span style="color: red;">✘</span> Fuel<br>`;
+    }
+
+    // Display Super Compactor status
+    resultHTML += superCompactor === "yes"
+        ? `<span style="color: green;">✔</span> Super Compactor 3000<br>`
+        : `<span style="color: red;">✘</span> Super Compactor 3000<br>`;
+
+    // Display Diamond Spreading status
+    resultHTML += diamondSpreading === "yes"
+        ? `<span style="color: green;">✔</span> Diamond Spreading<br>`
+        : `<span style="color: red;">✘</span> Diamond Spreading<br>`;
+
+    resultHTML += `<br><strong>Production for 24 hours:</strong><br>`;
+
+    // Show enchanted items if Super Compactor is enabled, otherwise show regular production
+    if (superCompactor === "yes" && Object.keys(enchantedItems).length > 0) {
+        for (let item in enchantedItems) {
+            resultHTML += `${enchantedItems[item]}x ${item}<br>`;
+        }
+    } else {
+        for (let item in totalProduction) {
+            const value = totalProduction[item];
+            const displayValue = value % 1 === 0 ? Math.floor(value) : value.toFixed(2);
+            resultHTML += `${displayValue}x ${item}<br>`;
+        }
+    }
+
+    // Display diamond bonus if applicable
+    if (diamondSpreading === "yes") {
+        resultHTML += `${diamondBonus}x Diamond (Diamond Spreading)<br>`;
+    }
+
+    // Display the result
+    document.getElementById("result").innerHTML = resultHTML;
+}
+
+
+document.getElementById("tierSlider").addEventListener("input", function () {
+    selections.tier = this.value;
+});
