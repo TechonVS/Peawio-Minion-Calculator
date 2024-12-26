@@ -67,7 +67,6 @@ button {
 .buttonselect.selected {
     background-color: #8c9c4c;
     color: black;
-    border: 3px solid white;
 
 }
 
@@ -76,9 +75,7 @@ button:hover {
     opacity: 0.8;
 }
 
-button:active {
-    border: 3px solid white;
-}
+
 
 .tab {
     display: flex;
@@ -187,7 +184,6 @@ color: white;
 
 .toggle-button[data-value="yes"].selected {
     background-color: #8c9c4c;
-    border: 3px solid white;
-}
 
 }
+
