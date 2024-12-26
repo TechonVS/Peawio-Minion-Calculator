@@ -699,6 +699,20 @@ function handleButtonClick(group, value) {
         ? `<span style="color: green;">✔</span> Diamond Spreading<br>`
         : `<span style="color: red;">✘</span> Diamond Spreading<br>`;
 
+ if (minion === "Iron Minion" || minion === "Gold Minion" || minion === "Cactus Minion") {
+                resultHTML += `<span style="color: green;">✔</span> Auto Smelter<br>`;
+            }
+            else {
+                resultHTML += `<span style="color: red;">✘</span> Auto Smelter<br>`;
+            }
+
+            if (minion === "Duck Minion") {
+                resultHTML += `<span style="color: green;">✔</span> Enchanted Duck Egg<br>`;
+            }
+            else {
+                resultHTML += `<span style="color: red;">✘</span> Enchanted Duck Egg<br>`;
+            }
+
     resultHTML += `<br><strong>Production for 24 hours:</strong><br>`;
 
     // Show enchanted items if Super Compactor is enabled, otherwise show regular production
@@ -713,6 +727,7 @@ function handleButtonClick(group, value) {
             resultHTML += `${displayValue}x ${item}<br>`;
         }
     }
+	
 
     // Display diamond bonus if applicable
     if (diamondSpreading === "yes") {
