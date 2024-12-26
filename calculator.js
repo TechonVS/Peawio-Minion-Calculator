@@ -477,7 +477,7 @@ const minionProduction = {
                 "10": { "Rotten Flesh": 8938, Diamond: 596 },
                 "11": { "Rotten Flesh": 12960, Diamond: 864 }
             },
-            "Oak Log Minion": {
+            "Oak Minion": {
                 "1": { "Oak Log": 3600 },
                 "2": { "Oak Log": 3600 },
                 "3": { "Oak Log": 3840 },
@@ -490,7 +490,7 @@ const minionProduction = {
                 "10": { "Oak Log": 5236 },
                 "11": { "Oak Log": 6400 }
             },
-            "Spruce Log Minion": {
+            "Spruce Minion": {
                 "1": { "Spruce Log": 3600 },
                 "2": { "Spruce Log": 3600 },
                 "3": { "Spruce Log": 3840 },
@@ -503,7 +503,7 @@ const minionProduction = {
                 "10": { "Spruce Log": 5236 },
                 "11": { "Spruce Log": 6400 }
             },
-            "Birch Log Minion": {
+            "Birch Minion": {
                 "1": { "Birch Log": 3600 },
                 "2": { "Birch Log": 3600 },
                 "3": { "Birch Log": 3840 },
@@ -516,7 +516,7 @@ const minionProduction = {
                 "10": { "Birch Log": 5236 },
                 "11": { "Birch Log": 6400 }
             },
-            "Dark Oak Log Minion": {
+            "Dark Oak Minion": {
                 "1": { "Dark Oak Log": 3600 },
                 "2": { "Dark Oak Log": 3600 },
                 "3": { "Dark Oak Log": 3840 },
@@ -529,7 +529,7 @@ const minionProduction = {
                 "10": { "Dark Oak Log": 5236 },
                 "11": { "Dark Oak Log": 6400 }
             },
-            "Acacia Log Minion": {
+            "Acacia Minion": {
                 "1": { "Acacia Log": 3600 },
                 "2": { "Acacia Log": 3600 },
                 "3": { "Acacia Log": 3840 },
@@ -542,7 +542,7 @@ const minionProduction = {
                 "10": { "Acacia Log": 5236 },
                 "11": { "Acacia Log": 6400 }
             },
-            "Jungle Log Minion": {
+            "Jungle Minion": {
                 "1": { "Jungle Log": 3600 },
                 "2": { "Jungle Log": 3600 },
                 "3": { "Jungle Log": 3840 },
