@@ -213,17 +213,17 @@ const minionProduction = {
                 "11": { "Green Dye": 8640 }
             },
             "Beetroot Minion": {
-                "1": { Beetroot: 5890, "Beetroot Seeds": 8835 },
-                "2": { Beetroot: 5890, "Beetroot Seeds": 8835 },
-                "3": { Beetroot: 6480, "Beetroot Seeds": 9720 },
-                "4": { Beetroot: 6480, "Beetroot Seeds": 9720 },
-                "5": { Beetroot: 7200, "Beetroot Seeds": 10800 },
-                "6": { Beetroot: 7200, "Beetroot Seeds": 10800 },
-                "7": { Beetroot: 8100, "Beetroot Seeds": 12150 },
-                "8": { Beetroot: 8100, "Beetroot Seeds": 12150 },
-                "9": { Beetroot: 9257, "Beetroot Seeds": 13885 },
-                "10": { Beetroot: 9257, "Beetroot Seeds": 13885 },
-                "11": { Beetroot: 10800, "Beetroot Seeds": 16200 }
+                "1": { Beetroot: 3927, "Beetroot Seeds": 8835 },
+                "2": { Beetroot: 3927, "Beetroot Seeds": 8835 },
+                "3": { Beetroot: 4320, "Beetroot Seeds": 9720 },
+                "4": { Beetroot: 4320, "Beetroot Seeds": 9720 },
+                "5": { Beetroot: 4800, "Beetroot Seeds": 10800 },
+                "6": { Beetroot: 4800, "Beetroot Seeds": 10800 },
+                "7": { Beetroot: 5400, "Beetroot Seeds": 12150 },
+                "8": { Beetroot: 5400, "Beetroot Seeds": 12150 },
+                "9": { Beetroot: 6171, "Beetroot Seeds": 13885 },
+                "10": { Beetroot: 6171, "Beetroot Seeds": 13885 },
+                "11": { Beetroot: 7200, "Beetroot Seeds": 16200 }
             },
             "Rabbit Minion": {
                 "1": { "Raw Rabbit": 1661, "Rabbit Foot": 581, "Rabbit Hide": 581 },
