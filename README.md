@@ -12,6 +12,7 @@ This is a web-based tool that helps players calculate minion production in Craft
 ## Credits
 
 - Developed by [Peaw](https://github.com/Peawies)
+- Improved interface by [Ndr](https://github.com/notndricim)
 
 ## License
 
