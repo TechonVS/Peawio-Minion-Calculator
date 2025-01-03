@@ -23,75 +23,11 @@
             document.querySelector(`.tab button[data-category="${category}"]`).classList.add('active');
         }
     </script>
-  
-            const fuelMultiplier = fuelMultipliers[fuel] || 1;
-            let totalProduction = {};
-            let diamondBonus = 0;
-            let enchantedItems = {};
-
-            for (let item in production) {
-                totalProduction[item] = production[item] * fuelMultiplier;
-                if (diamondSpreading === "yes") {
-                    diamondBonus += totalProduction[item];
-                }
-            }
-
-            if (superCompactor === "yes") {
-                const enchantedNameMapping = {
-                    "Wheat": "Enchanted Bread",
-                    "Sugar Cane": "Enchanted Sugar",
-                    "Green Dye": "Enchanted Cactus Green",
-                    "Blaze Rod": "Enchanted Blaze Powder",
-                };
-
-                const updatedTotalProduction = {};
-
-                for (let item in totalProduction) {
-                    const baseAmount = totalProduction[item];
-                    const enchantedName = enchantedNameMapping[item] || `Enchanted ${item}`;
-                    let divisionFactor = 160;
-                    if (item === "String") {
-                        divisionFactor = 192;
-                    } else if (item === "Leather") {
-                        divisionFactor = 576;
-                    }
-                    const enchantedAmount = baseAmount / divisionFactor;
-
-                    if (enchantedAmount > 0) {
-                        enchantedItems[enchantedName] = parseFloat(enchantedAmount.toFixed(2));
-                    }
-                }
-
-                totalProduction = updatedTotalProduction;
-            }
-
-            if (diamondSpreading === "yes") {
-                diamondBonus = (diamondBonus / 10).toFixed(2);
-            }
-
-            if (superCompactor === "yes") {
-                diamondBonus = (diamondBonus / 160).toFixed(2);
-            }
-
-            let resultHTML = `Tier ${tier} ${minion}<br>`;
-
-            if (fuel !== "None") {
-                resultHTML += `<span style="color: green;">✔</span> Fuel: ${fuel}<br>`;
-            }
-            if (fuel === "None") {
-                resultHTML += `<span style="color: red;">✘</span> Fuel<br>`;
-            }
-
-            if (superCompactor === "yes") {
-                resultHTML += `<span style="color: green;">✔</span> Super Compactor 3000<br>`;
-            }
-            if (superCompactor === "no") {
-                resultHTML += `<span style="color: red;">✘</span> Super Compactor 3000<br>`;
-            }
 
     <div class="container">
-        <img class="fit" src="images/title.png"><img>
-
+        <h1>Minion Production Calculator</h1>
+        <h2>Developed by Peaw | Improved by Ndr</h2>
+        <hr>
         <label>Minion Type:</label>
         <div class="tab">
             <button data-category="Farming" onclick="showCategory('Farming')" title="Farming" style="background-image: url('images/categories/farming.png')"></button>
@@ -227,5 +163,3 @@
   <script src="calculator.js"></script>
 </body>
 </html>
-
-
