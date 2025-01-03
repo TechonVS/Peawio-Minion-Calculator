@@ -1,7 +1,7 @@
 body {
-  margin: 0;
-  height: 100vh;
-  background: url('images/background.png') no-repeat center center fixed;
+  margin: 10;
+  height: 114vh;
+  background: #191919;
   background-size: cover;
   font-family: "Montserrat", Arial, sans-serif;
   justify-content: center;
@@ -23,11 +23,10 @@ div {
   max-width: 800px;
   margin: 0 auto;
   backdrop-filter: blur(10px); /* Apply blur effect */
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #242424;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  color: black;
+  color: #242424;
 }
 
 h1, h2, h3 {
