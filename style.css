@@ -30,6 +30,7 @@
   cursor: pointer;
   position: sticky;
   z-index: 100;
+  text-align: center;
 }
 
 .toggle-button.dark-mode {
