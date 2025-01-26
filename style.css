@@ -14,9 +14,9 @@
 }
 
 :root {
-  --background-dark: #191919;
-  --container-dark: #242424;
-  --text-dark: #f4f4f4;
+  --background-dark: #dddddd;
+  --container-dark: #ffffff;
+  --text-dark: #4f4f4f;
   --button-dark: #29282f;
   --button-select-dark: #8c9c4c;
   --tab-button-dark: #ccc;
