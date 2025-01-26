@@ -36,7 +36,7 @@ body.dark-mode {
 button.dark-mode {
   background-color: var(--button-dark);
   border: 1px solid var(--button-dark);
-  color: var(--text-dark);
+  color: var(--container-dark);
 }
 
 .buttonselect.dark-mode.selected {
