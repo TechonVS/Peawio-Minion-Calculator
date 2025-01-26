@@ -189,19 +189,20 @@ button:hover {
   opacity: 0.8;
 }
 /* Style for the button container */
-.calcbutton {
+/*.calcbutton {
   display: flex;
-  justify-content: center; /* Centers the button horizontally */
-  align-items: center; /* Centers the button vertically */
-  height: 100vh; /* Ensures the container fills the entire height of the viewport */
-}
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh;
+}*/
+
 
 /* Style for the button itself */
 .calcuateButton {
   background-color: var(--dark-gray); /* Green background */
   color: var(--white); /* White text color */
   font-size: 20px; /* Text size */
-  padding: 15px 150px; /* Adds padding inside the button (wider) */
+  padding: 15px; /* Adds padding inside the button (wider) */
   border: none; /* Removes default border */
   border-radius: 8px; /* Rounded corners */
   cursor: pointer; /* Changes cursor to a pointer on hover */
