@@ -28,6 +28,8 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
+  position: sticky;
+  z-index: 100;
 }
 
 .toggle-button.dark-mode {
