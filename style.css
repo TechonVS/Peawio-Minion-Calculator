@@ -87,10 +87,10 @@ label.dark-mode {
   color: var(--text-dark);
 }
 
-.tab button.dark-mode {
+/*.tab button.dark-mode {
   background-color: var(--text-dark);
   border: 1px solid var(--button-dark);
-}
+}*/
 
 body {
   margin: 10;
