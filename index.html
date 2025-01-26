@@ -9,16 +9,7 @@
     <title>Minion Production Calculator</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 
-    <script>
-        function changeCSS(cssFile, cssLinkIndex) {
-            var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
-            var newlink = document.createElement("link");
-            newlink.setAttribute("rel", "stylesheet");
-            newlink.setAttribute("type", "text/css");
-            newlink.setAttribute("href", cssFile);
-            document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
-       }
-    </script>
+    
 </head>
 <body>
     <script>
@@ -38,8 +29,10 @@
     <div class="container">
         <h1>Minion Production Calculator</h1>
         <h2>Developed by Peaw | Improved by Ndr</h2>
-        <h3 for="dark-mode-toggle">Dark Mode:</h3>
-        <input type="checkbox" id="dark-mode-toggle">
+       <!-- <h3 for="dark-mode-toggle">Dark Mode:</h3>
+        <input type="checkbox" id="dark-mode-toggle">-->
+        <h3>Dark Mode:</h3>
+        <button id="dark-mode-toggle" class="toggle-button">🌙</button>
         <hr>
         <h3>Minion Type:</h3>
         <div class="tab">
