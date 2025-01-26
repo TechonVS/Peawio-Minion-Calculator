@@ -20,6 +20,7 @@
   --button-dark: #007bff;
   --button-select-dark: #8c9c4c;
   --tab-button-dark: #ccc;
+  --text-dark: #000000;
 }
 
 body.dark-mode {
@@ -70,7 +71,7 @@ button.dark-mode {
 
 h1, h2, h3.dark-mode {
   text-align: center;
-  color: var(--text);
+  color: var(--text-dark);
 }
 
 body {
