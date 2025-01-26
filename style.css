@@ -83,8 +83,13 @@ h3.dark-mode {
   color: var(--text-dark);
 }
 
-label {
+label.dark-mode {
   color: var(--text-dark);
+}
+
+.tab button.dark-mode {
+  background-color: var(--text-dark);
+  border: 1px solid var(--button-dark);
 }
 
 body {
@@ -223,29 +228,19 @@ button:hover {
 .tab button:hover, .minion-buttons button:hover {
   opacity: 0.8;
 }
-/* Style for the button container */
-/*.calcbutton {
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-  height: 100vh;
-}*/
-
-
-/* Style for the button itself */
 .calcuateButton {
-  background-color: var(--dark-gray); /* Green background */
-  color: var(--white); /* White text color */
-  font-size: 20px; /* Text size */
-  padding: 15px 150px; /* Adds padding inside the button (wider) */
-  border: none; /* Removes default border */
-  border-radius: 8px; /* Rounded corners */
-  cursor: pointer; /* Changes cursor to a pointer on hover */
-  transition: background-color 0.3s; /* Smooth transition for background color */
-  white-space: nowrap; /* Prevents text from wrapping to the next line */
-  max-width: 100%; /* Ensures the button doesn't overflow the parent container */
-  overflow: hidden; /* Prevents the text from overflowing outside the button */
-  text-overflow: ellipsis; /* Adds "..." if the text overflows */
+  background-color: var(--dark-gray); 
+  color: var(--white); 
+  font-size: 20px; 
+  padding: 15px 150px; 
+  border: none; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+  white-space: nowrap; 
+  max-width: 100%; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
   font-family: "Montserrat", Arial, sans-serif;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
