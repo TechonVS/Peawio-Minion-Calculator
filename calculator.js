@@ -1,5 +1,6 @@
 // Function to toggle a button's state
 
+/*
 document.getElementById('dark-mode-toggle').addEventListener('change', (event) => {
   if (event.target.checked) {
     document.body.classList.add('dark-mode');
@@ -31,6 +32,29 @@ document.getElementById('dark-mode-toggle').addEventListener('change', (event) =
     //document.querySelectorAll('.tab button').forEach(el => el.classList.remove('dark-mode'));
   }
 });
+*/
+
+document.getElementById('dark-mode-toggle').addEventListener('click', (event) => {
+  const button = event.target;
+  const isDarkMode = document.body.classList.toggle('dark-mode');
+  
+  button.textContent = isDarkMode ? '☀️' : '🌙';
+  button.classList.toggle('dark-mode', isDarkMode);
+  button.classList.toggle('light-mode', !isDarkMode);
+
+  document.querySelectorAll('.container').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
+  document.querySelectorAll('button').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
+  document.querySelectorAll('.buttonselect').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
+  document.querySelectorAll('.tab button').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
+  document.querySelectorAll('.minion-buttons button').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
+  document.querySelectorAll('.toggle-button').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
+  document.querySelectorAll('h1').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
+  document.querySelectorAll('h2').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
+  document.querySelectorAll('h3').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
+  document.querySelectorAll('label').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
+  document.querySelectorAll('.tab button').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
+});
+
 
 function toggleButton(buttonId, selectionKey) {
   const button = document.getElementById(buttonId);
