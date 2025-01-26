@@ -84,6 +84,10 @@ h3.dark-mode {
   color: var(--text-dark);
 }
 
+label {
+  color: var(--text-dark);
+}
+
 body {
   margin: 10;
   height: 114vh;
