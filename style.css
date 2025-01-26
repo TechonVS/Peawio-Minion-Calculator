@@ -23,7 +23,7 @@
   --text-dark: #000000;
 }
 
-.toggle-button {
+.theme-button {
   background: none;
   border: none;
   font-size: 24px;
@@ -31,13 +31,14 @@
   position: sticky;
   z-index: 100;
   text-align: center;
+  margin: 0 auto;
 }
 
-.toggle-button.dark-mode {
+.theme-button.dark-mode {
   color: var(--text-dark);
 }
 
-.toggle-button.light-mode {
+.theme-button.light-mode {
   color: var(--text);
 }
 
@@ -140,6 +141,10 @@ div {
   border-radius: 10px;
   color: var(--container);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
