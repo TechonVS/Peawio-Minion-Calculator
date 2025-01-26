@@ -31,7 +31,6 @@ body.dark-mode {
 .container.dark-mode {
   background-color: var(--container-dark);
   color: var(--text-dark);
-  box-shadow: 5px 10px #888888;
 }
 
 button.dark-mode {
@@ -117,6 +116,7 @@ div {
   padding: 20px;
   border-radius: 10px;
   color: var(--container);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
