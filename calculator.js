@@ -52,7 +52,7 @@ document.getElementById('dark-mode-toggle').addEventListener('click', (event) =>
   document.querySelectorAll('h2').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
   document.querySelectorAll('h3').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
   document.querySelectorAll('label').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
-  document.querySelectorAll('.tab button').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
+  document.querySelectorAll('.tab').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
 });
 
 
