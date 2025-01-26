@@ -13,6 +13,60 @@
   --light-green: #45a049;
 }
 
+:root {
+  --background-dark: #191919;
+  --container-dark: #242424;
+  --text-dark: #f4f4f4;
+  --button-dark: #29282f;
+  --button-select-dark: #8c9c4c;
+  --tab-button-dark: #ccc;
+}
+
+body.dark-mode {
+  background: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.container.dark-mode {
+  background-color: var(--container-dark);
+  color: var(--text-dark);
+}
+
+button.dark-mode {
+  background-color: var(--button-dark);
+  border: 1px solid var(--button-dark);
+  color: var(--text-dark);
+}
+
+.buttonselect.dark-mode.selected {
+  background-color: var(--button-select-dark);
+  color: var(--black);
+}
+
+.tab.dark-mode button {
+  background-color: var(--black);
+  border: 1px solid var(--tab-button-dark);
+}
+
+.tab.dark-mode button.active {
+  background-color: var(--green);
+}
+
+.minion-buttons.dark-mode button.selected {
+  background-color: var (--button-select-dark);
+  color: var(--black);
+}
+
+.minion-buttons.dark-mode button.active {
+  background-color: var(--green);
+  color: var(--black);
+}
+
+.toggle-button.dark-mode {
+  background-color: var(--button-dark);
+  border: 1px solid var(--button-dark);
+}
+
 body {
   margin: 10;
   height: 114vh;
