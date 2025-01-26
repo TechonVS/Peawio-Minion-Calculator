@@ -23,6 +23,21 @@
   --text-dark: #000000;
 }
 
+.toggle-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.toggle-button.dark-mode {
+  color: var(--text-dark);
+}
+
+.toggle-button.light-mode {
+  color: var(--text);
+}
+
 body.dark-mode {
   background: var(--background-dark);
   color: var(--text-dark);
