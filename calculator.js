@@ -1,39 +1,5 @@
 // Function to toggle a button's state
 
-/*
-document.getElementById('dark-mode-toggle').addEventListener('change', (event) => {
-  if (event.target.checked) {
-    document.body.classList.add('dark-mode');
-    document.querySelectorAll('.container').forEach(el => el.classList.add('dark-mode'));
-    document.querySelectorAll('button').forEach(el => el.classList.add('dark-mode'));
-    document.querySelectorAll('.buttonselect').forEach(el => el.classList.add('dark-mode'));
-    document.querySelectorAll('.tab button').forEach(el => el.classList.add('dark-mode'));
-    document.querySelectorAll('.tab').forEach(el => el.classList.add('dark-mode'));
-    document.querySelectorAll('.minion-buttons button').forEach(el => el.classList.add('dark-mode'));
-    document.querySelectorAll('.toggle-button').forEach(el => el.classList.add('dark-mode'));
-    document.querySelectorAll('h1').forEach(el => el.classList.add('dark-mode'));
-    document.querySelectorAll('h2').forEach(el => el.classList.add('dark-mode'));
-    document.querySelectorAll('h3').forEach(el => el.classList.add('dark-mode'));
-    document.querySelectorAll('label').forEach(el => el.classList.add('dark-mode'));
-    //document.querySelectorAll('.tab button').forEach(el => el.classList.add('dark-mode'));
-  } else {
-    document.body.classList.remove('dark-mode');
-    document.querySelectorAll('.container').forEach(el => el.classList.remove('dark-mode'));
-    document.querySelectorAll('button').forEach(el => el.classList.remove('dark-mode'));
-    document.querySelectorAll('.buttonselect').forEach(el => el.classList.remove('dark-mode'));
-    document.querySelectorAll('.tab button').forEach(el => el.classList.remove('dark-mode'));
-    document.querySelectorAll('.tab').forEach(el => el.classList.remove('dark-mode'));
-    document.querySelectorAll('.minion-buttons button').forEach(el => el.classList.remove('dark-mode'));
-    document.querySelectorAll('.toggle-button').forEach(el => el.classList.remove('dark-mode'));
-    document.querySelectorAll('h1').forEach(el => el.classList.remove('dark-mode'));
-    document.querySelectorAll('h2').forEach(el => el.classList.remove('dark-mode'));
-    document.querySelectorAll('h3').forEach(el => el.classList.remove('dark-mode'));
-    document.querySelectorAll('label').forEach(el => el.classList.remove('dark-mode'));
-    //document.querySelectorAll('.tab button').forEach(el => el.classList.remove('dark-mode'));
-  }
-});
-*/
-
 document.getElementById('dark-mode-toggle').addEventListener('click', (event) => {
   const button = event.target;
   const isDarkMode = document.body.classList.toggle('dark-mode');
