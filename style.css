@@ -68,6 +68,11 @@ button.dark-mode {
   border: 1px solid var(--button-dark);
 }
 
+h1, h2, h3.dark-mode {
+  text-align: center;
+  color: var(--text);
+}
+
 body {
   margin: 10;
   height: 114vh;
