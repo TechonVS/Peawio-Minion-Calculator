@@ -12,6 +12,7 @@ document.getElementById('dark-mode-toggle').addEventListener('change', (event) =
     document.querySelectorAll('h1').forEach(el => el.classList.add('dark-mode'));
     document.querySelectorAll('h2').forEach(el => el.classList.add('dark-mode'));
     document.querySelectorAll('h3').forEach(el => el.classList.add('dark-mode'));
+    document.querySelectorAll('label').forEach(el => el.classList.add('dark-mode'));
   } else {
     document.body.classList.remove('dark-mode');
     document.querySelectorAll('.container').forEach(el => el.classList.remove('dark-mode'));
@@ -23,6 +24,7 @@ document.getElementById('dark-mode-toggle').addEventListener('change', (event) =
     document.querySelectorAll('h1').forEach(el => el.classList.remove('dark-mode'));
     document.querySelectorAll('h2').forEach(el => el.classList.remove('dark-mode'));
     document.querySelectorAll('h3').forEach(el => el.classList.remove('dark-mode'));
+    document.querySelectorAll('label').forEach(el => el.classList.remove('dark-mode'));
   }
 });
 
