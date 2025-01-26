@@ -45,7 +45,7 @@ button.dark-mode {
 }
 
 .tab.dark-mode button {
-  background-color: var(--black);
+  background-color: var(--button-dark);
   border: 1px solid var(--tab-button-dark);
 }
 
