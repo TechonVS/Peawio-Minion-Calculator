@@ -23,7 +23,14 @@
   --text-dark: #000000;
 }
 
-.theme-button {
+.theme-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/*.theme-button {
   background: none;
   border: none;
   font-size: 24px;
@@ -40,7 +47,7 @@
 
 .theme-button.light-mode {
   color: var(--text);
-}
+}*/
 
 body.dark-mode {
   background: var(--background-dark);
@@ -141,10 +148,10 @@ div {
   border-radius: 10px;
   color: var(--container);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  display: flex;
+  /*display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center;*/
 }
 
 h1 {
