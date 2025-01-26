@@ -1,10 +1,16 @@
-:root{
+:root {
   --background: #ffffff;
   --container: #242424;
   --text: #f4f4f4;
   --button: #29282f;
   --button-select: #8c9c4c;
   --tab-button: #ccc;
+  --black: #000000;
+  --green: #008000;
+  --white: #ffffff;
+  --dark-gray: darkgray;
+  --shadow-blue: rgba(0, 123, 255, 0.5);
+  --light-green: #45a049;
 }
 
 body {
@@ -77,16 +83,12 @@ button {
 }
 .buttonselect.selected {
   background-color: var(--button-select);
-  color: black;
-
+  color: var(--black);
 }
-
 
 button:hover {
   opacity: 0.8;
 }
-
-
 
 .tab {
   display: flex;
@@ -97,7 +99,7 @@ button:hover {
   padding: 10px 20px;
   margin-right: 5px;
   border: 1px solid var(--tab-button);
-  background-color: black;
+  background-color: var(--black);
   cursor: pointer;
   background-size: cover;
   background-position: center;
@@ -107,7 +109,7 @@ button:hover {
 }
 
 .tab button.active {
-  background-color: green;
+  background-color: var(--green);
 }
 
 .minion-buttons {
@@ -117,12 +119,12 @@ button:hover {
 
 .minion-buttons button.selected {
   background-color: var(--button-select);
-  color: black;
+  color: var(--black);
 }
 
 .minion-buttons button.active {
-  background-color: green;
-  color: black;
+  background-color: var(--green);
+  color: var(--black);
 }
 
 .minion-buttons.active {
@@ -142,8 +144,8 @@ button:hover {
 
 /* Style for the button itself */
 .calcuateButton {
-  background-color: dark-gray; /* Green background */
-  color: white; /* White text color */
+  background-color: var(--dark-gray); /* Green background */
+  color: var(--white); /* White text color */
   font-size: 20px; /* Text size */
   padding: 15px 150px; /* Adds padding inside the button (wider) */
   border: none; /* Removes default border */
@@ -157,28 +159,26 @@ button:hover {
   font-family: "Montserrat", Arial, sans-serif;
 }
 
-
 .calcuateButton:hover {
-  background-color: #45a049; 
+  background-color: var(--light-green); 
 }
-
 
 .calcuateButton:focus {
   outline: none; 
-  box-shadow: 0 0 5px 2px rgba(0, 123, 255, 0.5);    }
-.result {
-  font-size: 30px;
-  color: white;
+  box-shadow: 0 0 5px 2px var(--shadow-blue);    
 }
 
-
+.result {
+  font-size: 30px;
+  color: var(--white);
+}
 
 .toggle-button {
   width: 80px;
   height: 80px;
   border-radius: 15px;
-  border: 1px solid #29282f;
-  background-color: #29282f;
+  border: 1px solid var(--button);
+  background-color: var(--button);
   background-size: cover;
   background-position: center;
   cursor: pointer;
@@ -188,8 +188,7 @@ button:hover {
 }
 
 .toggle-button[data-value="yes"].selected {
-  background-color: #8c9c4c;
-
+  background-color: var(--button-select);
 }
 
 .button-group {
