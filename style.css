@@ -1,7 +1,16 @@
+:root{
+  --background: #191919;
+  --container: #242424;
+  --text: #f4f4f4;
+  --button: #29282f;
+  --button-select: #8c9c4c;
+  --tab-button: #ccc;
+}
+
 body {
   margin: 10;
   height: 114vh;
-  background: #191919;
+  background: var(--background);
   background-size: cover;
   font-family: "Montserrat", Arial, sans-serif;
   justify-content: center;
@@ -23,22 +32,22 @@ div {
   max-width: 800px;
   margin: 0 auto;
   backdrop-filter: blur(10px); /* Apply blur effect */
-  background-color: #242424;
+  background-color: var(--container);
   padding: 20px;
   border-radius: 10px;
-  color: #242424;
+  color: var(--container);
 }
 
 h1, h2, h3 {
   text-align: center;
-  color: #f4f4f4;
+  color: var(--text);
 }
 
 label {
   font-weight: bold;
   margin: 10px 0;
   display: inline-block;
-  color: #f4f4f4;
+  color: var(--text);
   font-family: "Montserrat", Arial, sans-serif;
   text-transform: uppercase;
 }
@@ -53,9 +62,9 @@ button {
   width: 80px;
   height: 80px;
   border-radius: 15px;
-  border: 1px solid #29282f;
-  background-color: #29282f;
-  color: #f4f4f4;
+  border: 1px solid var(--button);
+  background-color: var(--button);
+  color: var(--text);
   cursor: pointer;
   text-align: center;
   padding: 0;
@@ -67,7 +76,7 @@ button {
   align-items: center;
 }
 .buttonselect.selected {
-  background-color: #8c9c4c;
+  background-color: var(--button-select);
   color: black;
 
 }
@@ -87,7 +96,7 @@ button:hover {
 .tab button {
   padding: 10px 20px;
   margin-right: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--tab-button);
   background-color: black;
   cursor: pointer;
   background-size: cover;
@@ -107,7 +116,7 @@ button:hover {
 }
 
 .minion-buttons button.selected {
-  background-color: #8c9c4c;
+  background-color: var(--button-select);
   color: black;
 }
 
@@ -122,7 +131,7 @@ button:hover {
 
 .tab button:hover, .minion-buttons button:hover {
   opacity: 0.8;
-}<style>
+}
 /* Style for the button container */
 .calcbutton {
   display: flex;
